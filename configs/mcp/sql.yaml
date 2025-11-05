@@ -1,0 +1,5 @@
+# DuckDB SQL queries for MCPClient
+queries:
+  sample_count: |
+    with t as (select 1 as id union all select 2)
+    select count(*) as n from t;

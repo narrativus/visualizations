@@ -1,0 +1,7 @@
+# REST endpoints for MCPClient
+endpoints:
+  sample:
+    url: https://httpbin.org/get
+    method: GET
+    timeout: 20
+    format: json

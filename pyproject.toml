@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "visualizations"
+version = "0.1.0"
+description = "DS/DA portfolio: MCP ingestion, ML, Dash app"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+  { include = "visualizations", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+pandas = "^2.2"
+numpy = "^2.0"
+scikit-learn = "^1.5"
+duckdb = "^1.1"
+pyarrow = "^17.0"
+plotly = "^5.24"
+dash = "^2.17"
+httpx = "^0.27"
+pydantic = "^2.9"
+pyyaml = "^6.0"
+tenacity = "^9.0"
+typer = "^0.12"
+rich = "^13.8"
+modelcontextprotocol = "*"
+python-dotenv = "^1.0"
+gunicorn = "^21.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3"
+ruff = "^0.6.9"
+black = "^24.10"
+isort = "^5.13"
+mypy = "^1.11"
+pre-commit = "^4.0"
+commitizen = "^3.30"
+nbstripout = "^0.7"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+select = ["E","F","I","B","UP","C90","N","S","W","PL"]
+ignore = ["E501"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+python_version = "3.12"
+strict = false
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+show_error_codes = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "$version"
+update_changelog_on_bump = true

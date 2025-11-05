@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: visualizations
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8050
